@@ -26,7 +26,6 @@ int print_s(va_list args)
 	char *str;
 
 	i = 0;
-
 	str = va_arg(args, char*);
 
 	if (str == NULL)
@@ -43,6 +42,7 @@ int print_s(va_list args)
  * print_percent - pass the percent sing
  * @args: string  argument
  * Return: return the percent sing
+ *
  */
 int print_percent(va_list args)
 {
@@ -56,6 +56,7 @@ int print_percent(va_list args)
 	}
 	return (*str);
 }
+
 /**
  * print_d - prints a decimal
  * @args: decimal argument
@@ -63,12 +64,11 @@ int print_percent(va_list args)
  */
 int print_d(va_list args)
 {
-	unsigned int absolute, aux, countnum, count;
 
+	unsigned int absolute, aux, countnum, count;
 	int n;
 
 	count = 0;
-
 	n = va_arg(args, int);
 
 	if (n < 0)
@@ -78,6 +78,7 @@ int print_d(va_list args)
 		}
 		else
 			absolute = n;
+
 	aux = absolute;
 	countnum = 1;
 	while (aux > 9)
@@ -91,13 +92,13 @@ int print_d(va_list args)
 		countnum /= 10;
 	}
 	return (count);
-
 }
 /**
  * print_i - prints integer
  * @args: integer argument
  * Return: the decimal function
  */
+
 int print_i(va_list args)
 {
 	return (print_d(args));
